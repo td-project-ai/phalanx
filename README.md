@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="phalanx-logo.jpg" alt="Phaylanx Framework" width="600">
+</p>
+
 # Phaylanx
 
 **A modular AI skills framework built on the [GOTCHA architecture](https://agentskills.io/) for Claude Code, GitHub Copilot, and OpenAI Codex.**
