@@ -17,6 +17,9 @@ themes:
 
 context:
 - brand/component-library.md
+- brand/brands/credera.md
+- brand/brands/quanta.md
+- brand/brands/minimal.md
 
 dependencies: []
 

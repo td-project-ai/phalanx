@@ -191,9 +191,9 @@ Available brand themes for presentations. Each theme has CSS (for HTML decks) an
 | **Credera** | `themes/credera.css` | `themes/pptx/credera/` | Source Serif Pro + Lato, 3 color variants |
 | **Quanta** | `themes/quanta.css` | — | Oswald + Source Sans 3, pattern overlays |
 
-All themes share the same component library: `themes/component-library.md`. Brand-specific extensions are documented in that file under each brand's section.
+All themes share the same component library: `themes/component-library.md` (brand-agnostic). Brand-specific tokens, typography, and extended components live in separate files under `themes/brands/`.
 
-All theme paths are relative to `context/templates/presentations/`. See `themes/_contract.md` for the CSS theme contract, `themes/component-library.md` for all component HTML snippets, and `hardprompts/presentations/deck-skill.md` for the HTML deck builder skill.
+All theme paths are relative to `context/templates/presentations/`. See `themes/_contract.md` for the CSS theme contract, `themes/component-library.md` for shared component HTML snippets, `themes/brands/<name>.md` for brand-specific references, and `hardprompts/presentations/deck-skill.md` for the HTML deck builder skill.
 
 ---
 

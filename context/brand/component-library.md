@@ -1,6 +1,8 @@
 # Slide Deck Component Library
 
-> Master reference for all components available in the Phalanx slide engine. Components work with `base-template.html` and any theme CSS that satisfies [`_contract.md`](_contract.md).
+> Universal component reference for the Phalanx slide engine. Every component here works with `base-template.html` and **any** theme CSS that satisfies [`_contract.md`](_contract.md). Components use CSS custom properties (`--accent`, `--primary`, etc.) so colors and fonts adapt automatically per theme.
+>
+> For brand-specific tokens, typography, logos, and brand-only components, see the individual brand files in `themes/brands/`.
 
 ---
 
@@ -9,7 +11,7 @@
 1. Pick a **slide type** (dark, light, gray, accent) based on content weight
 2. Pick a **component** from the library below
 3. Copy the HTML snippet into `.slide-inner`
-4. Brand-specific components are marked with their theme — only use them with the matching CSS
+4. The active theme CSS handles all visual styling — no brand classes needed
 
 ---
 
@@ -36,9 +38,7 @@ All slides get a footer gradient bar via `.slide-footer` automatically.
 
 ---
 
-## Shared Components
-
-These work on **every theme**. The CSS theming handles color/font adaptation.
+## Components
 
 ### Layout
 
@@ -587,176 +587,3 @@ No more than 2 consecutive slides may use the same component category:
 | Timeline | `h-timeline`, `ascend-timeline`, `maturity-scale` |
 
 Plan the component sequence during outlining, not during slide generation.
-
----
-
-# Brand-Specific Extensions
-
-## Quanta Brand
-
-### Color Tokens
-
-| Token | Value | Name |
-|---|---|---|
-| `--bolt` | `#F0941C` | Bolt Orange — primary brand |
-| `--bolt-light` | `#FFAE4D` | Bolt tint |
-| `--infrared` | `#CD0A1B` | Infrared Red — accent/danger |
-| `--carbon` | `#221F1F` | Carbon Black — primary dark |
-| `--carbon-light` | `#3A3535` | Carbon +1 |
-| `--carbon-lighter` | `#575454` | Carbon +2 |
-| `--carbon-lightest` | `#8B8A8A` | Carbon +3, muted |
-
-Contract aliases: `--primary` → Carbon, `--accent` → Bolt, `--accent-dark` → Infrared.
-
-### Typography
-
-| Role | Font | Fallback | Notes |
-|---|---|---|---|
-| Headings | Oswald | Arial, sans-serif | Always uppercase, letter-spacing 0.04em |
-| Body | Source Sans 3 | Arial, sans-serif | Weight 300/400/600 |
-
-Official Quanta typefaces: Alternate Gothic Extra Condensed ATF (headings), Proxima Nova (body). Oswald and Source Sans 3 are web substitutes.
-
-### Pattern Overlays
-
-`.slide-dark` and `.slide-accent` include automatic diagonal-hatched overlays matching the Quanta brand pattern system. No extra markup needed.
-
-### Logo Usage
-
-- **Horizontal format** preferred for most applications
-- **Vertical format** when layout demands
-- **Icon only** for small spaces (social avatars, favicons)
-- Never use wordmark alone — always pair with icon
-- Clear space: width of "QU" letters minimum
-- Minimum size: 70px digital (dimensional), 50px (flat)
-
-### Photography
-
-- Authentic, spontaneous — real employees, real work
-- No posed shots, no stock photos for external use
-- Safety-approved for all field operations
-- Represent full workforce diversity
-- Prioritize clean energy for sustainability content
-
-### Sub-Branding
-
-- **Quanta-operated companies**: Quanta icon + company name in brand typeface
-- **Independently operated**: "A QUANTA SERVICES COMPANY" below operating company logo
-
----
-
-## Credera Brand
-
-### Color Tokens
-
-Colors extracted from the 2024 Credera Global PowerPoint Accelerator PPTX theme.
-
-| Token | Value | Role |
-|---|---|---|
-| `--credera-red` | `#E55F4C` | Brand mark, logo, bookend backgrounds |
-| `--accent` | `#E55F4C` | Interactive accent (borders, highlights, badges) |
-| `--accent-light` | `#F08878` | Hover states, light accents |
-| `--accent-dark` | `#C94A38` | Pressed states, emphasis |
-| `--navy` | `#3A3A3A` | Primary dark / text |
-| `--slate-blue` | `#496986` | Extended palette |
-| `--sky-blue` | `#5CA2D1` | Charts, secondary highlights |
-| `--warm-gold` | `#E9A867` | Callouts, Sage variant accent |
-| `--sage` | `#6A9E98` | Subtle accents, Sage variant |
-| `--light-gray` | `#F8F5F2` | Page backgrounds, covers |
-| `--ice-blue` | `#D7ECF3` | Light info backgrounds |
-
-### Theme Variants
-
-| Variant | `data-variant` | Dark Tone | Accent | Usage |
-|---|---|---|---|---|
-| Coral + Charcoal | *(default)* | `#3A3A3A` | `#E55F4C` | Default, most versatile |
-| Sage + Gold | `"sage"` | `#2A3D36` | `#E9A867` | Sustainability, growth, advisory |
-| Warm + Slate | `"warm"` | `#4A3728` | `#496986` | Understated, enterprise, finance |
-
-Apply via `data-variant="sage"` or `data-variant="warm"` on `<html>`.
-
-### Typography
-
-- **Headlines**: Source Serif Pro SemiBold, uppercase, letter-spacing +2px
-- **Subheadlines**: Source Serif Pro, regular, uppercase, letter-spacing +1px
-- **Labels**: Lato Bold, all-caps, character spacing +0.5
-- **Body**: Lato, line height 1.6
-- **Icons**: Font Awesome 6 — never emojis
-
-### Logo (SVG)
-
-Nav sidebar — place inside `.nav-brand`:
-```html
-<div class="nav-brand">
-  <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 32" fill="none">
-    <!-- 8 path elements: brand mark + "Credera" letterforms -->
-    <!-- Use fill="currentColor" to inherit text color -->
-  </svg>
-</div>
-```
-
-Cover/bookend — place inside `.cover-logo` with `opacity: 0.12` for watermark:
-```html
-<div class="cover-logo">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 32" fill="none">
-    <!-- Same paths, fill="var(--accent)" -->
-  </svg>
-</div>
-```
-
-### Credera-Only Components
-
-These components are **only available** with `credera.css`:
-
-| Component | Classes | Purpose |
-|---|---|---|
-| Cover slide | `.slide-cover`, `.cover-date`, `.cover-title`, `.cover-logo` | Branded cover with logo watermark |
-| Callout accent | `.callout-accent` | Red-branded callout (uses `--credera-red`) |
-| Success highlight | `.success-highlight`, `.highlight-text` | Large gradient callout with accent heading |
-| Question items | `.question-item`, `.question-number`, `.question-text` | Discussion prompt rows |
-| Program elements | `.program-elements`, `.program-element` | Horizontal dark-slide panels |
-| Capabilities band | `.capabilities-band`, `.capabilities-grid` | Full-width dark capability showcase |
-| Equation layout | `.equation-layout`, `.equation-column`, `.equation-operator` | Visual A + B = C equations |
-| Materials grid | `.materials-grid`, `.material-section`, `.material-thumbs` | Thumbnail sections for deliverables |
-| Participants grid | `.participants-grid`, `.participant-group` | Stakeholder group cards |
-| Card variants | `.card-dark`, `.card-clickable`, `.card-arrow`, `.card-icon`, `.card-type`, `.card-img` | Extended card styles |
-| Status badge | `.status-badge` | Accent-bg inline badge |
-
-### Credera Section Color Strategy
-
-- **Title/closing**: Bookend with `.slide-dark` or Credera Red backgrounds (sparingly)
-- **Dark sections**: `.slide-dark`, `.slide-accent` for high-impact
-- **Content**: `.slide-light` or `.slide-gray` for text-heavy slides
-- **Never mix** accent colors within the same section
-
----
-
-## Minimal Theme
-
-The Minimal theme is brand-agnostic — system fonts, slate/blue palette. Clone `minimal.css` to create a new brand theme.
-
-### Color Tokens
-
-| Token | Value |
-|---|---|
-| `--primary` | `#0F172A` (Slate 900) |
-| `--accent` | `#2563EB` (Blue 600) |
-| `--accent-light` | `#60A5FA` (Blue 400) |
-| `--light-gray` | `#F1F5F9` (Slate 100) |
-
-### Typography
-
-System fonts only — no external dependencies:
-- Headings: `'Segoe UI', system-ui, sans-serif`
-- Body: Same stack
-
-No brand-specific components. All shared components work with the Minimal theme.
-
----
-
-## Known Limitations
-
-- Quanta fonts (Oswald, Source Sans 3) load from Google Fonts — requires internet
-- Credera uses Font Awesome 6 from CDN — requires internet
-- Minimal theme uses system fonts — works offline
-- Font sizes use `clamp()` for responsive scaling; works at standard desktop resolutions

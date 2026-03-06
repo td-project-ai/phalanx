@@ -50,7 +50,7 @@ Ask the user:
 
 For **Credera** variants: Navy+Purple (default), Green+Yellow (`data-variant="green"`), Maroon+Pink (`data-variant="maroon"`).
 
-For **Quanta**: see `context/brand/component-library.md` → Quanta Brand section for brand guidelines.
+For **Quanta**: see `context/brand/brands/quanta.md` for brand guidelines.
 
 ### Read Engine References
 
@@ -60,7 +60,7 @@ For **Quanta**: see `context/brand/component-library.md` → Quanta Brand sectio
 | `context/templates/presentations/themes/_contract.md` | CSS contract |
 | Selected theme `.css` file | Visual tokens |
 | `reference/component-library.md` (this skill) | Full component reference |
-| Theme companion `*-components.md` (if brand theme) | Extended components |
+| `context/brand/brands/<theme>.md` (if brand theme) | Brand tokens, extended components |
 
 ### Plan Slide Structure
 

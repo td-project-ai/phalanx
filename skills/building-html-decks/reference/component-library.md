@@ -119,12 +119,13 @@ When building a deck, plan the component sequence during outlining. If 3 slides 
 
 ## Theme-Specific Components
 
-All brand-specific components, color tokens, and typography are documented in the consolidated library:
+Brand-specific tokens, typography, logos, and extended components are in separate brand files under `context/brand/brands/`:
 
-**`context/brand/component-library.md`**
-
-- **Credera**: cover slides, horizontal timelines with dot states, question items, program elements, equation layouts, quote blocks/cards, capabilities bands, materials grids, participant grids, 3 color variants.
-- **Quanta**: diagonal-hatched pattern overlays, Bolt/Infrared dual-accent system, runbook phase cards, badge variants, logo usage, photography guidelines.
+| Brand File | Contents |
+|---|---|
+| `context/brand/brands/credera.md` | Color tokens, 3 variants, logo SVG, 11 Credera-only components |
+| `context/brand/brands/quanta.md` | Color tokens, pattern overlays, logo usage, photography, sub-branding |
+| `context/brand/brands/minimal.md` | System-font defaults (no brand-specific components) |
 
 ---
 
@@ -134,7 +135,7 @@ Brand themes are CSS files satisfying the contract (`context/templates/presentat
 
 1. Create a `.css` file implementing all required selectors and custom properties
 2. Place in `context/templates/presentations/themes/`
-3. Document brand-specific components in a companion `*-components.md`
+3. Create a brand reference file at `context/brand/brands/<name>.md` with tokens, typography, and any extended components
 
 ### Theme Variants
 
