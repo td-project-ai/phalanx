@@ -33,9 +33,9 @@ This works on **Claude Code**, **GitHub Copilot**, and **OpenAI Codex**. The boo
 
 ### Setup Walkthrough
 
-[![Setup Walkthrough](https://img.shields.io/badge/▶_Watch-Setup_Walkthrough-blue?style=for-the-badge&logo=github)](https://github.com/td-project-ai/phalanx/blob/main/docs/media/Phalanx-Setup.mp4)
+[![Watch the Setup Walkthrough](https://img.youtube.com/vi/gcr_nIoHoks/maxresdefault.jpg)](https://youtu.be/gcr_nIoHoks)
 
-*6-minute walkthrough showing a fresh Phalanx environment setup from scratch.*
+Watch how to bootstrap a fresh Phalanx environment from an empty project directory — platform detection, core skill installation, memory initialization, bundle selection, and verification — all in under 6 minutes.
 
 ---
 
