@@ -33,9 +33,9 @@ This works on **Claude Code**, **GitHub Copilot**, and **OpenAI Codex**. The boo
 
 ### Setup Walkthrough
 
-[![Watch the Setup Walkthrough](https://img.youtube.com/vi/gcr_nIoHoks/maxresdefault.jpg)](https://youtu.be/gcr_nIoHoks)
+<video src="https://github.com/user-attachments/assets/e794c2ec-78f9-4961-99ec-4282763f075e" controls width="100%"></video>
 
-Watch how to bootstrap a fresh Phalanx environment from an empty project directory — platform detection, core skill installation, memory initialization, bundle selection, and verification — all in under 6 minutes.
+Watch how to bootstrap a fresh Phalanx environment from an empty project directory — platform detection, core skill installation, memory initialization, bundle selection, and verification — all in under 5 minutes.
 
 ---
 
