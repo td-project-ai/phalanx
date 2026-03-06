@@ -16,7 +16,7 @@ Phalanx provides a minimal core of essential skills — memory management, works
 
 Create a new project directory, open your AI coding assistant, and say:
 
-> **"Bootstrap this project using https://github.com/luckybob34/phalanx"**
+> **"Bootstrap this project using https://github.com/td-project-ai/phalanx"**
 
 The AI will fetch [bootstrap.md](bootstrap.md), detect your platform, install the core framework, generate the correct configuration files, initialize memory, and offer optional bundles — all automatically.
 
@@ -156,7 +156,7 @@ default_tone: professional
 
 # Registry (added during bootstrap)
 registry:
-  url: https://github.com/luckybob34/phalanx
+  url: https://github.com/td-project-ai/phalanx
   branch: main
   auth_env: GITHUB_PAT
   cache_dir: .tmp/registry-cache

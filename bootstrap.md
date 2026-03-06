@@ -60,7 +60,7 @@ The core is required. Fetch it from the registry.
 ### Option A: Git Sparse-Checkout (Preferred)
 
 ```bash
-REPO="https://github.com/luckybob34/phalanx"
+REPO="https://github.com/td-project-ai/phalanx"
 BRANCH="main"
 CLONE_DIR=".tmp/phalanx-core"
 
@@ -77,7 +77,7 @@ cd -
 If git is unavailable, use the GitHub REST API to download `core/` contents:
 
 ```
-GET https://api.github.com/repos/luckybob34/phalanx/git/trees/main?recursive=1
+GET https://api.github.com/repos/td-project-ai/phalanx/git/trees/main?recursive=1
 ```
 
 Filter for entries starting with `core/` and download each blob.
@@ -117,7 +117,7 @@ Add the registry section to `config.yaml` if not already present:
 ```yaml
 # Registry configuration
 registry:
-  url: https://github.com/luckybob34/phalanx
+  url: https://github.com/td-project-ai/phalanx
   branch: main
   auth_env: GITHUB_PAT
   cache_dir: .tmp/registry-cache

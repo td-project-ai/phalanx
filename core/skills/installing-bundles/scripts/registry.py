@@ -39,7 +39,7 @@ from typing import Any
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
-DEFAULT_REGISTRY_URL = "https://github.com/luckybob34/phalanx"
+DEFAULT_REGISTRY_URL = "https://github.com/td-project-ai/phalanx"
 DEFAULT_BRANCH = "main"
 CATALOG_PATH = "catalog.yaml"          # path inside the registry repo
 INSTALLED_MARKER = ".phalanx-installed.json"

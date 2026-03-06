@@ -4,7 +4,7 @@
 # Used by registry.py for --list and --search operations.
 
 version: "1.0"
-registry: https://github.com/luckybob34/phalanx
+registry: https://github.com/td-project-ai/phalanx
 
 bundles:
 

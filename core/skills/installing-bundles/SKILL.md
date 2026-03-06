@@ -37,7 +37,7 @@ Read `config.yaml` at project root and find the `registry:` section:
 
 ```yaml
 registry:
-  url: https://github.com/luckybob34/phalanx
+  url: https://github.com/td-project-ai/phalanx
   branch: main
   auth_env: GITHUB_PAT          # optional for public repos
   cache_dir: .tmp/registry-cache
@@ -45,7 +45,7 @@ registry:
 ```
 
 If no `registry:` section exists, use defaults:
-- url: `https://github.com/luckybob34/phalanx`
+- url: `https://github.com/td-project-ai/phalanx`
 - branch: `main`
 
 ---
