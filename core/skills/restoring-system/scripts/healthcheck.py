@@ -129,16 +129,16 @@ def check_themes(root: Path) -> list[tuple[str, bool, str]]:
         for css in sorted(css_files):
             results.append((f"context/templates/presentations/themes/{css.name}", True, "theme CSS"))
 
-    # Check PPTX themes if directory exists
-    pptx_dir = themes_dir / "pptx"
-    if pptx_dir.is_dir():
-        pptx_templates = list(pptx_dir.rglob("*.pptx"))
+    # Check PPTX themes if brand subdirectories exist
+    brands_dir = root / "context" / "brand" / "brands"
+    if brands_dir.is_dir():
+        pptx_templates = list(brands_dir.rglob("*.pptx"))
         if pptx_templates:
             for t in pptx_templates:
                 rel = t.relative_to(root)
                 results.append((str(rel).replace("\\", "/"), True, "PPTX template"))
         else:
-            results.append(("context/templates/presentations/themes/pptx/*.pptx", False, "no PPTX templates found"))
+            results.append(("context/brand/brands/*/*.pptx", False, "no PPTX templates found"))
 
     return results
 

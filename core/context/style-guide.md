@@ -188,7 +188,7 @@ Available brand themes for presentations. Each brand `.md` file contains both HT
 | Brand | Brand File | PPTX template.pptx | Notes |
 |---|---|---|---|
 | **Minimal** | `themes/brands/minimal.md` | — | Brand-agnostic default, system fonts |
-| **Credera** | `themes/brands/credera.md` | `themes/pptx/credera/template.pptx` | Source Serif Pro + Lato, 3 color variants |
+| **Credera** | `themes/brands/credera.md` | `brands/credera/template.pptx` | Source Serif Pro + Lato, 3 color variants |
 | **Quanta** | `themes/brands/quanta.md` | — | Oswald + Source Sans 3, pattern overlays |
 
 All themes share the same component library: `themes/component-library.md` (brand-agnostic). Brand-specific tokens, typography, extended components, theme CSS, and PPTX config all live in a single file per brand under `themes/brands/`.

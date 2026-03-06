@@ -8,7 +8,7 @@
 ## Required Files
 
 ```
-themes/pptx/<theme-name>/
+brands/<theme-name>/
 └── template.pptx          # Source PPTX with slide masters, layouts, colour scheme
 ```
 

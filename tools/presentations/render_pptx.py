@@ -63,7 +63,6 @@ from .components.structure import (
 # Theme loader
 # ---------------------------------------------------------------------------
 
-THEMES_DIR = Path(__file__).resolve().parent.parent.parent / "context" / "templates" / "presentations" / "themes" / "pptx"
 BRANDS_DIR = Path(__file__).resolve().parent.parent.parent / "context" / "templates" / "presentations" / "themes" / "brands"
 
 
@@ -100,9 +99,9 @@ def load_theme(theme_name: str, variant: str = "default") -> dict:
 
     Resolution order:
       1. Brand .md file with embedded ``## PPTX Config`` YAML block
-      2. Standalone ``config.yaml`` in themes/pptx/<name>/
+      2. Standalone ``config.yaml`` in brands/<name>/ (legacy fallback)
 
-    The binary ``template.pptx`` always lives at themes/pptx/<name>/template.pptx.
+    The binary ``template.pptx`` lives at brands/<name>/template.pptx.
     """
     theme: dict | None = None
 
@@ -113,10 +112,10 @@ def load_theme(theme_name: str, variant: str = "default") -> dict:
         if config_yaml:
             theme = yaml.safe_load(config_yaml)
 
-    # 2. Fallback to standalone config.yaml
+    # 2. Fallback to standalone config.yaml in brand subdirectory
     if theme is None:
-        theme_dir = THEMES_DIR / theme_name
-        config_path = theme_dir / "config.yaml"
+        brand_dir = BRANDS_DIR / theme_name
+        config_path = brand_dir / "config.yaml"
         if not config_path.exists():
             raise FileNotFoundError(
                 f"No PPTX config found for '{theme_name}'. "
@@ -132,10 +131,10 @@ def load_theme(theme_name: str, variant: str = "default") -> dict:
             overrides = variants[variant]
             theme["colors"] = {**theme.get("colors", {}), **overrides}
 
-    # Template.pptx always lives in the pptx theme directory
-    pptx_dir = THEMES_DIR / theme_name
-    theme["_template_path"] = str(pptx_dir / "template.pptx")
-    theme["_theme_dir"] = str(pptx_dir)
+    # Template.pptx lives in the brand subdirectory
+    brand_dir = BRANDS_DIR / theme_name
+    theme["_template_path"] = str(brand_dir / "template.pptx")
+    theme["_theme_dir"] = str(brand_dir)
 
     return theme
 

@@ -18,7 +18,7 @@ html_themes:
 
 # Theme paths
 theme_path_html: context/templates/presentations/themes
-theme_path_pptx: context/templates/presentations/themes/pptx
+theme_path_pptx: context/brand/brands
 
 # Model preferences (override per agent in .claude/agents/)
 models:

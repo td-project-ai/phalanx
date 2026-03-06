@@ -104,7 +104,7 @@ These components are **only available** with the Credera theme:
 
 Reference for available component renderers in the Credera PPTX theme.
 
-> The PPTX template file (`template.pptx`) is a binary asset stored at `themes/pptx/credera/template.pptx` (83MB+, gitignored). The config below and the template together drive `render_pptx.py`.
+> The PPTX template file (`template.pptx`) is a binary asset stored at `brands/credera/template.pptx` (83MB+, gitignored). The config below and the template together drive `render_pptx.py`.
 
 ### Template Layouts (Native)
 

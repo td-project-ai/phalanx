@@ -343,11 +343,11 @@ def resolve_local_mappings(bundle: dict[str, Any]) -> dict[str, str]:
         mappings[f"tools/{tool}"] = f"tools/{tool}"
     for theme in bundle.get("themes", []):
         # themes/html/foo.css → context/templates/presentations/themes/foo.css
-        # themes/pptx/foo/    → context/templates/presentations/themes/pptx/foo/
+        # themes/pptx/foo/    → context/brand/brands/foo/
         if theme.startswith("html/"):
             mappings[f"themes/{theme}"] = f"context/templates/presentations/themes/{theme.removeprefix('html/')}"
         elif theme.startswith("pptx/"):
-            mappings[f"themes/{theme}"] = f"context/templates/presentations/themes/pptx/{theme.removeprefix('pptx/')}"
+            mappings[f"themes/{theme}"] = f"context/brand/brands/{theme.removeprefix('pptx/')}"
         else:
             mappings[f"themes/{theme}"] = f"context/templates/presentations/themes/{theme}"
     for ctx in bundle.get("context", []):

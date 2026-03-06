@@ -122,13 +122,13 @@ phalanx/
 ├── skills/               # Installable workflow + atomic skills
 ├── agents/               # Specialist agent definitions
 ├── tools/                # Domain-specific tool scripts
-├── themes/               # PPTX binary templates
-│   └── pptx/             # PowerPoint template.pptx files (gitignored)
 └── context/              # Brand guides and component docs
     └── brand/
         ├── component-library.md   # Shared components (brand-agnostic)
+        ├── pptx-contract.md       # PPTX theme contract spec
         └── brands/                # Per-brand references
-            └── minimal.md
+            ├── minimal.md
+            └── credera/           # PPTX template.pptx (gitignored)
 ```
 
 ---
