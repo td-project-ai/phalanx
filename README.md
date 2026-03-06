@@ -129,8 +129,6 @@ phalanx/
     └── brand/
         ├── component-library.md   # Shared components (brand-agnostic)
         └── brands/                # Per-brand references
-            ├── credera.md
-            ├── quanta.md
             └── minimal.md
 ```
 
@@ -149,13 +147,16 @@ Phalanx separates **shared components** from **brand-specific styling** so you c
 | **Theme CSS** | `themes/html/<brand>.css` | Visual implementation — colors, fonts, spacing |
 | **Brand Reference** | `context/brand/brands/<brand>.md` | Color tokens, typography, logo usage, brand-only components |
 
-### Included Brands
+### Included Brand
 
-| Brand | CSS | Reference | Notes |
-|-------|-----|-----------|-------|
-| **Minimal** | `themes/html/minimal.css` *(core)* | `brands/minimal.md` | System fonts, slate/blue palette, works offline |
-| **Credera** | `themes/html/credera.css` | `brands/credera.md` | 3 color variants, Source Serif Pro + Lato, 11 extended components |
-| **Quanta** | `themes/html/quanta.css` | `brands/quanta.md` | Oswald + Source Sans 3, pattern overlays, Bolt/Infrared accents |
+The **Minimal** theme ships with core — system fonts, slate/blue palette, works fully offline. It serves as the brand-agnostic default and the starting point for creating custom brands.
+
+| File | Purpose |
+|------|--------|
+| `themes/html/minimal.css` | Default theme CSS (installed with core) |
+| `context/brand/brands/minimal.md` | Token reference for the minimal theme |
+
+Additional brand themes (e.g., client-specific branding) can be installed via bundles or created manually using the steps below.
 
 ### Adding a New Brand
 
