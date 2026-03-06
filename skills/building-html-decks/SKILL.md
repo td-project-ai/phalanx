@@ -50,7 +50,7 @@ Ask the user:
 
 For **Credera** variants: Navy+Purple (default), Green+Yellow (`data-variant="green"`), Maroon+Pink (`data-variant="maroon"`).
 
-For **Quanta**: see `context/quanta-brand.md` for brand guidelines.
+For **Quanta**: see `context/brand/component-library.md` → Quanta Brand section for brand guidelines.
 
 ### Read Engine References
 

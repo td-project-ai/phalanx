@@ -119,17 +119,12 @@ When building a deck, plan the component sequence during outlining. If 3 slides 
 
 ## Theme-Specific Components
 
-### Credera
+All brand-specific components, color tokens, and typography are documented in the consolidated library:
 
-Extended consulting-oriented components. Read: `context/templates/presentations/themes/credera-components.md`
+**`context/brand/component-library.md`**
 
-Key additions: cover slides, horizontal timelines with dot states, question items, program elements, equation layouts, quote blocks/cards, capabilities bands, materials grids, participant grids.
-
-### Quanta
-
-Infrastructure/energy branding. Read: `context/templates/presentations/themes/quanta-components.md`
-
-Key additions: diagonal-hatched pattern overlays, Bolt/Infrared dual-accent system, runbook phase cards, badge variants (`.badge-bolt`, `.badge-infrared`).
+- **Credera**: cover slides, horizontal timelines with dot states, question items, program elements, equation layouts, quote blocks/cards, capabilities bands, materials grids, participant grids, 3 color variants.
+- **Quanta**: diagonal-hatched pattern overlays, Bolt/Infrared dual-accent system, runbook phase cards, badge variants, logo usage, photography guidelines.
 
 ---
 

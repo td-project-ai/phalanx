@@ -16,9 +16,7 @@ themes:
 - html/quanta.css
 
 context:
-- brand/quanta-brand.md
-- brand/credera-components.md
-- brand/quanta-components.md
+- brand/component-library.md
 
 dependencies: []
 

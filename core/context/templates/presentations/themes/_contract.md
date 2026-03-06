@@ -183,13 +183,13 @@ No HTML or JS changes required - CSS-only swap.
 | File | Purpose |
 |---|---|
 | `themes/<brand>.css` | Complete visual theme |
-| `themes/<brand>-components.md` | Extended component reference for the brand |
+| `themes/component-library.md` | Master component library (shared + brand-specific) |
 | `themes/_contract.md` | This document |
 | `themes/minimal.css` | Brand-agnostic default theme |
 | `themes/credera.css` | Credera brand theme |
-| `themes/credera-components.md` | Credera component reference |
+| `themes/component-library.md` | Master component library (shared + brand-specific) |
 | `themes/quanta.css` | Quanta Services brand theme |
-| `themes/quanta-components.md` | Quanta component reference |
+
 
 ---
 

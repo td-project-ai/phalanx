@@ -94,9 +94,7 @@ bundles:
   - html/credera.css
   - html/quanta.css
   context:
-  - brand/quanta-brand.md
-  - brand/credera-components.md
-  - brand/quanta-components.md
+  - brand/component-library.md
 
 - name: presentations-pptx
   description: PowerPoint presentations from YAML outlines with branded templates

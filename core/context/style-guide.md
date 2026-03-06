@@ -185,13 +185,15 @@ Slide decks must use a variety of visual patterns. Match the visual shape to the
 
 Available brand themes for presentations. Each theme has CSS (for HTML decks) and may have a PPTX theme (for PowerPoint decks).
 
-| Brand | HTML Theme | PPTX Theme | Brand Guide |
+| Brand | HTML Theme | PPTX Theme | Notes |
 |---|---|---|---|
-| **Minimal** | `themes/minimal.css` | — | Brand-agnostic default |
-| **Credera** | `themes/credera.css` + `themes/credera-components.md` | `themes/pptx/credera/` | — |
-| **Quanta** | `themes/quanta.css` + `themes/quanta-components.md` | — | `context/quanta-brand.md` |
+| **Minimal** | `themes/minimal.css` | — | Brand-agnostic default, system fonts |
+| **Credera** | `themes/credera.css` | `themes/pptx/credera/` | Source Serif Pro + Lato, 3 color variants |
+| **Quanta** | `themes/quanta.css` | — | Oswald + Source Sans 3, pattern overlays |
 
-All theme paths are relative to `context/templates/presentations/`. See `themes/_contract.md` for the CSS theme contract and `hardprompts/presentations/deck-skill.md` for the HTML deck builder skill.
+All themes share the same component library: `themes/component-library.md`. Brand-specific extensions are documented in that file under each brand's section.
+
+All theme paths are relative to `context/templates/presentations/`. See `themes/_contract.md` for the CSS theme contract, `themes/component-library.md` for all component HTML snippets, and `hardprompts/presentations/deck-skill.md` for the HTML deck builder skill.
 
 ---
 
