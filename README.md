@@ -14,42 +14,22 @@ Phaylanx provides a minimal core of essential skills — memory management, work
 
 ## Quick Start
 
-### Claude Code
+Create a new project directory, open your AI coding assistant, and say:
 
-```bash
-# 1. Create a new project directory
-mkdir my-project && cd my-project
+> **"Bootstrap this project using https://github.com/luckybob34/phaylanx"**
 
-# 2. Start Claude Code and paste this:
-#    "Bootstrap this project using https://github.com/luckybob34/phaylanx"
-#
-#    Claude will read bootstrap.md and set everything up.
-```
+The AI will fetch [bootstrap.md](bootstrap.md), detect your platform, install the core framework, generate the correct configuration files, initialize memory, and offer optional bundles — all automatically.
 
-### GitHub Copilot
+This works on **Claude Code**, **GitHub Copilot**, and **OpenAI Codex**. The bootstrap handles everything:
 
-```bash
-# 1. Clone the core into your project
-git clone --depth=1 https://github.com/luckybob34/phaylanx .tmp/phaylanx
-
-# 2. Copy core files
-cp -r .tmp/phaylanx/core/skills/* .claude/skills/
-cp -r .tmp/phaylanx/core/tools/* tools/
-cp -r .tmp/phaylanx/core/context/* context/
-cp .tmp/phaylanx/core/CLAUDE.md ./CLAUDE.md
-cp .tmp/phaylanx/core/config.yaml ./config.yaml
-
-# 3. Generate Copilot instructions
-python tools/platform/generate_instructions.py
-
-# 4. Install bundles
-python tools/platform/registry.py --list
-python tools/platform/registry.py --install <bundle-name>
-```
-
-### OpenAI Codex
-
-Same as Copilot setup. The `generate_instructions.py` script produces both `.github/copilot-instructions.md` and `AGENTS.md`.
+| Step | What Happens |
+|------|-------------|
+| 1 | Detects your platform (Claude Code / Copilot / Codex) |
+| 2 | Fetches core skills, tools, and context from this repo |
+| 3 | Generates platform-specific config (`CLAUDE.md`, `.github/copilot-instructions.md`, `AGENTS.md`) |
+| 4 | Initializes persistent memory (MEMORY.md + SQLite databases) |
+| 5 | Offers optional bundles — pick what you need |
+| 6 | Verifies the installation |
 
 ---
 

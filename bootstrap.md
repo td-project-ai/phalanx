@@ -218,27 +218,27 @@ print('Databases initialized.')
 
 ## Section 7 — Generate Platform Files
 
-Based on `$PLATFORM`, generate the appropriate entry-point files:
+Generate **all** platform entry-point files regardless of detected platform. This ensures
+the project works if the user later switches platforms or uses multiple tools:
 
-### Claude Code
+### Step 7a — Claude Code (already done)
 
-Already done — `CLAUDE.md` was copied in Section 4. Skills in `.claude/skills/` are auto-discovered.
+`CLAUDE.md` was copied in Section 4. Skills in `.claude/skills/` are auto-discovered by Claude Code.
 
-### GitHub Copilot
+### Step 7b — GitHub Copilot + OpenAI Codex
 
-```bash
-python tools/platform/generate_instructions.py
-```
-
-This generates `.github/copilot-instructions.md` from all installed skill frontmatter.
-
-### OpenAI Codex
+Run the platform generator to produce both `.github/copilot-instructions.md` and `AGENTS.md`:
 
 ```bash
 python tools/platform/generate_instructions.py
 ```
 
-This also generates `AGENTS.md` for Codex compatibility.
+This reads all installed skill frontmatter and generates:
+- `.github/copilot-instructions.md` — flat composite for GitHub Copilot
+- `AGENTS.md` — flat composite for OpenAI Codex
+
+> **Always run this step**, even for Claude Code users. It costs nothing and
+> makes the project portable across all three platforms.
 
 ---
 
