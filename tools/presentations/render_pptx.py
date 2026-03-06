@@ -64,17 +64,66 @@ from .components.structure import (
 # ---------------------------------------------------------------------------
 
 THEMES_DIR = Path(__file__).resolve().parent.parent.parent / "context" / "templates" / "presentations" / "themes" / "pptx"
+BRANDS_DIR = Path(__file__).resolve().parent.parent.parent / "context" / "templates" / "presentations" / "themes" / "brands"
+
+
+def _extract_pptx_config(brand_file: Path) -> str | None:
+    """Extract PPTX config YAML from a brand .md file.
+
+    Looks for a ``## PPTX Config`` heading followed by a fenced yaml block.
+    Returns the YAML string or None if not found.
+    """
+    text = brand_file.read_text(encoding="utf-8")
+    in_section = False
+    in_code = False
+    yaml_lines: list[str] = []
+
+    for line in text.splitlines():
+        if line.startswith("## PPTX Config"):
+            in_section = True
+            continue
+        if in_section and line.startswith("## "):
+            break  # hit next section
+        if in_section and line.strip().startswith("```yaml"):
+            in_code = True
+            continue
+        if in_code and line.strip() == "```":
+            break
+        if in_code:
+            yaml_lines.append(line)
+
+    return "\n".join(yaml_lines) if yaml_lines else None
 
 
 def load_theme(theme_name: str, variant: str = "default") -> dict:
-    """Load a theme config.yaml and apply variant overrides."""
-    theme_dir = THEMES_DIR / theme_name
-    config_path = theme_dir / "config.yaml"
-    if not config_path.exists():
-        raise FileNotFoundError(f"Theme config not found: {config_path}")
+    """Load a PPTX theme config and apply variant overrides.
 
-    with open(config_path, "r", encoding="utf-8") as f:
-        theme = yaml.safe_load(f)
+    Resolution order:
+      1. Brand .md file with embedded ``## PPTX Config`` YAML block
+      2. Standalone ``config.yaml`` in themes/pptx/<name>/
+
+    The binary ``template.pptx`` always lives at themes/pptx/<name>/template.pptx.
+    """
+    theme: dict | None = None
+
+    # 1. Try brand .md file first
+    brand_file = BRANDS_DIR / f"{theme_name}.md"
+    if brand_file.exists():
+        config_yaml = _extract_pptx_config(brand_file)
+        if config_yaml:
+            theme = yaml.safe_load(config_yaml)
+
+    # 2. Fallback to standalone config.yaml
+    if theme is None:
+        theme_dir = THEMES_DIR / theme_name
+        config_path = theme_dir / "config.yaml"
+        if not config_path.exists():
+            raise FileNotFoundError(
+                f"No PPTX config found for '{theme_name}'. "
+                f"Checked: {brand_file}, {config_path}"
+            )
+        with open(config_path, "r", encoding="utf-8") as f:
+            theme = yaml.safe_load(f)
 
     # Apply variant overrides
     if variant and variant != "default":
@@ -83,9 +132,10 @@ def load_theme(theme_name: str, variant: str = "default") -> dict:
             overrides = variants[variant]
             theme["colors"] = {**theme.get("colors", {}), **overrides}
 
-    # Store template path
-    theme["_template_path"] = str(theme_dir / "template.pptx")
-    theme["_theme_dir"] = str(theme_dir)
+    # Template.pptx always lives in the pptx theme directory
+    pptx_dir = THEMES_DIR / theme_name
+    theme["_template_path"] = str(pptx_dir / "template.pptx")
+    theme["_theme_dir"] = str(pptx_dir)
 
     return theme
 

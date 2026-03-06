@@ -9,12 +9,18 @@
 
 ```
 themes/pptx/<theme-name>/
-├── template.pptx          # Source PPTX with slide masters, layouts, colour scheme
-├── config.yaml            # Layout mapping, colour tokens, font config
-└── components.md          # Docs for available component renderers
+└── template.pptx          # Source PPTX with slide masters, layouts, colour scheme
 ```
 
-## config.yaml Structure
+The `config.yaml` (layout mapping, colour tokens, font config) and `components.md` (component renderer docs) are now embedded in the brand file at `context/brand/brands/<theme-name>.md` under:
+- `## PPTX Config` — fenced YAML block with full config
+- `## PPTX Components` — component reference documentation
+
+`render_pptx.py` reads the YAML config directly from the brand `.md` file.
+
+## PPTX Config Structure
+
+The following YAML structure must appear in the brand `.md` file under `## PPTX Config` in a fenced `yaml` code block:
 
 ```yaml
 name: theme-name

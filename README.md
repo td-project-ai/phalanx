@@ -122,9 +122,8 @@ phalanx/
 ├── skills/               # Installable workflow + atomic skills
 ├── agents/               # Specialist agent definitions
 ├── tools/                # Domain-specific tool scripts
-├── themes/               # CSS and PPTX themes
-│   ├── html/             # Brand CSS files
-│   └── pptx/             # PowerPoint templates
+├── themes/               # PPTX binary templates
+│   └── pptx/             # PowerPoint template.pptx files (gitignored)
 └── context/              # Brand guides and component docs
     └── brand/
         ├── component-library.md   # Shared components (brand-agnostic)

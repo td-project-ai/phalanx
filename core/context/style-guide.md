@@ -183,15 +183,20 @@ Slide decks must use a variety of visual patterns. Match the visual shape to the
 
 ### Brand Themes
 
-Available brand themes for presentations. Each brand file contains both the reference documentation and the complete theme CSS (under `## Theme CSS`). PPTX themes (where available) are separate.
+Available brand themes for presentations. Each brand `.md` file contains both HTML CSS and (where applicable) PPTX configuration. Binary `template.pptx` files remain separate.
 
-| Brand | Brand File (includes CSS) | PPTX Theme | Notes |
+| Brand | Brand File | PPTX template.pptx | Notes |
 |---|---|---|---|
 | **Minimal** | `themes/brands/minimal.md` | — | Brand-agnostic default, system fonts |
-| **Credera** | `themes/brands/credera.md` | `themes/pptx/credera/` | Source Serif Pro + Lato, 3 color variants |
+| **Credera** | `themes/brands/credera.md` | `themes/pptx/credera/template.pptx` | Source Serif Pro + Lato, 3 color variants |
 | **Quanta** | `themes/brands/quanta.md` | — | Oswald + Source Sans 3, pattern overlays |
 
-All themes share the same component library: `themes/component-library.md` (brand-agnostic). Brand-specific tokens, typography, extended components, and the complete theme CSS all live in a single file per brand under `themes/brands/`.
+All themes share the same component library: `themes/component-library.md` (brand-agnostic). Brand-specific tokens, typography, extended components, theme CSS, and PPTX config all live in a single file per brand under `themes/brands/`.
+
+Each brand `.md` file may contain:
+- `## Theme CSS` — complete HTML theme CSS
+- `## PPTX Config` — PPTX config YAML for `render_pptx.py`
+- `## PPTX Components` — PPTX component renderer docs
 
 All theme paths are relative to `context/templates/presentations/`. See `themes/_contract.md` for the CSS theme contract, `themes/component-library.md` for shared component HTML snippets, `themes/brands/<name>.md` for brand-specific references, and `hardprompts/presentations/deck-skill.md` for the HTML deck builder skill.
 

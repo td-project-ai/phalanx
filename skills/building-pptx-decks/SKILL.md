@@ -49,8 +49,8 @@ Available themes are directories in `context/templates/presentations/themes/pptx
 | File | Purpose |
 |------|---------|
 | `reference/outline-spec.md` (this skill) | Full YAML outline format |
-| Theme `config.yaml` | Layout mapping, colours, fonts |
-| Theme `components.md` | Available renderers |
+| Brand file `## PPTX Config` section | Layout mapping, colours, fonts |
+| Brand file `## PPTX Components` section | Available renderers |
 
 ### Plan Slides
 
